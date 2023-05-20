@@ -43,8 +43,10 @@ async function run() {
                     sellerEmail: req.query.sellerEmail,
                 }
             }
+           
             const cursor = allToysCollection.find(query);
             const result = await cursor.toArray();
+            
             res.send(result);
         })
 
