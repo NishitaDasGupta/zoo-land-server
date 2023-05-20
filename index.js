@@ -36,16 +36,31 @@ async function run() {
             res.send(result);
         })
         app.get('/allToys', async (req, res) => {
-            const result = await allToysCollection.find().toArray();
-            console.log("Find All Toys ");
+            let query = {};
+            console.log(req.query);
+            if (req.query?.sellerEmail) {
+                query = {
+                    sellerEmail: req.query.sellerEmail,
+                }
+            }
+            const cursor = allToysCollection.find(query);
+            const result = await cursor.toArray();
             res.send(result);
         })
 
 
-        app.get('/alltoy/:id', async (req,res)=> {
+
+        app.post('/allToys', async (req, res) => {
+            const toy = req.body;
+            console.log(toy);
+            const result = await allToysCollection.insertOne(toy);
+            res.send(result);
+        })
+
+        app.get('/alltoy/:id', async (req, res) => {
             const id = req.params.id;
             console.log(id);
-            const query = {_id: new ObjectId(id)};
+            const query = { _id: new ObjectId(id) };
             const result = await allToysCollection.findOne(query);
             console.log("Find Toy ", id);
             res.send(result);
