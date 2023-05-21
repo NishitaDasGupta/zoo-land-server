@@ -25,7 +25,7 @@ const client = new MongoClient(uri, {
 async function run() {
     try {
         // Connect the client to the server	(optional starting in v4.7)
-        await client.connect();
+        client.connect();
 
         const database = client.db("zooLandDB");
         const galleryCollection = database.collection("gallery");
@@ -38,16 +38,25 @@ async function run() {
         })
         app.get('/allToys', async (req, res) => {
             let query = {};
-            console.log(req.query);
+            let cursor;
+            let value;
+           // console.log(parseInt(req.query?.sort));
             if (req.query?.sellerEmail) {
                 query = {
                     sellerEmail: req.query.sellerEmail,
                 }
+                if (req.query?.sort) {
+                    value = parseInt(req.query.sort);
+                    cursor = allToysCollection.find(query).limit(20).sort({ "price": value });
+                }
+                else {
+                    cursor = allToysCollection.find(query).limit(20);
+                }
             }
-           
-            const cursor = allToysCollection.find(query).limit(20);
+            else {
+                cursor = allToysCollection.find(query).limit(20);
+            }
             const result = await cursor.toArray();
-            
             res.send(result);
         })
 
@@ -67,7 +76,7 @@ async function run() {
             res.send(result);
         })
 
-       
+
 
         app.put('/alltoy/:id', async (req, res) => {
             const id = req.params.id;
@@ -83,7 +92,7 @@ async function run() {
                     detailDescription: updatedToy.detailDescription
                 },
             };
-            const result = await allToysCollection.updateOne(filter,updateDoc,options);
+            const result = await allToysCollection.updateOne(filter, updateDoc, options);
             res.send(result);
         })
 
