@@ -1,0 +1,45 @@
+[
+
+    {
+        "_id": 1,
+        "customerName": "Emma Johnson",
+        "email": "emmajohnson@example.com",
+        "customerPic": "https://img.freepik.com/free-photo/cheerful-woman-with-binoculars_23-2147654303.jpg?size=626&ext=jpg&ga=GA1.2.1614607020.1683036746&semt=ais",
+        "customerReview": "I am thrilled with Zoo Land! The quality is outstanding, and my child can't get enough of it. Highly satisfied and definitely worth the purchase.",
+        "rating": 4.8
+    },
+
+    { "_id": 2,
+        "customerName": "William Davis",
+        "email": "williamdavis@example.com",
+        "customerPic": "https://img.freepik.com/premium-photo/handsome-optimistic-young-happy-man-casual-clothing-walking-outdoors-green-park-using-mobile-phone-drinking-coffee_171337-79697.jpg?size=626&ext=jpg&ga=GA1.1.1614607020.1683036746&semt=ais",
+        "customerReview": "Zoo Land is a winner! It's interactive, engaging, and provides endless entertainment for my little one. The craftsmanship is remarkable. Highly recommend it. ",
+        "rating": 4.2
+    },
+    { "_id": 3,
+        "customerName": "Olivia Thompson",
+        "email": "oliviathompson@example.com",
+        "customerPic": "https://img.freepik.com/free-photo/happy-fabulous-ginger-woman-stylish-red-beret-street_273443-245.jpg?size=626&ext=jpg&ga=GA1.2.1614607020.1683036746&semt=ais",
+        "customerReview": "I can't say enough good things about Zoo Land. It's beautifully designed, safe, and captures my child's imagination.",
+        "rating": 4.3
+
+    },
+
+    { "_id": 4,
+        "customerName": "James Rodriguez",
+        "email": "jamesrodriguez@example.com",
+        "customerPic": "https://img.freepik.com/free-photo/smiling-young-man-with-crossed-arms-outdoors_1140-255.jpg?size=626&ext=jpg&ga=GA1.1.1614607020.1683036746&semt=ais",
+        "customerReview": "I am beyond impressed with Zoo Land! The attention to detail is exceptional, and it has provided countless hours of joy and learning for my child. Highly recommended.",
+        "rating": 3.5
+
+    },
+
+    { "_id": 5,
+        "customerName": "Sophia Martinez",
+        "email": "sophiamartinez@example.com",
+        "customerPic": "https://img.freepik.com/premium-photo/beautiful-brunette-woman-sitting-cafe-paris_170362-3619.jpg?w=740",
+        "customerReview": "Zoo Land is a game-changer! It's educational, durable, and sparks my child's creativity. It's become an instant favorite in our household. Five stars all the way!",
+        "rating": 4.9
+
+    }
+]
